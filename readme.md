@@ -1,4 +1,4 @@
-# Starter Code: Constellations Server
+# Flashcard App - Server 
 
 This server is intended to be run for some checkpoints in the Thinkful curriculum. If you have trouble getting the server to run, reach out to your mentor.
 
@@ -23,18 +23,18 @@ Running `npm start` will spin up a server on port 5001.
 
 ## Description
 
-The Constellations Server provides a RESTful API through which you can request and modify information about constellations.
+The Flashcard App Server provides a RESTful API through which you can request, add, and modify information about flashcards.
 
 In general, you should only need to access the routes described below.
 
 ### GET /constellations
 
-Making a `GET` request to `/constellations` will return an array of objects, where each object is a constellation.
+Making a `GET` request to `/decks` will return an array of objects, where each object is a deck.
 
 **Example Request**
 
 ```
-GET http://localhost:5001/constellations
+GET http://localhost:5001/deck
 ```
 
 **Example Response**
@@ -58,7 +58,7 @@ GET http://localhost:5001/constellations
 ]
 ```
 
-### GET /constellations/:id
+### GET /flashcard/:id
 
 Making a `GET` request to `/constellations/:id`, where `:id` is an ID of one of the constellations, will return a single object that represents the specified constellation.
 
@@ -82,7 +82,7 @@ GET http://localhost:5001/constellations/UEUrlfX
 }
 ```
 
-### POST /constellations
+### POST /decks
 
 Making a `POST` request to `/constellations`, and including a request body, will return a single object that represents the newly created constellation.
 
@@ -91,7 +91,7 @@ There is no specific validation that is a part of the server, so you can create 
 **Example Request**
 
 ```
-POST http://localhost:5001/constellations
+POST http://localhost:5001/decks
 {
   "name": "Camelopardalis",
   "meaning": "Giraffe",
@@ -112,7 +112,7 @@ POST http://localhost:5001/constellations
 }
 ```
 
-### PUT /constellations/:id
+### PUT /decks/:id
 
 Making a `PUT` request to `/constellations/:id`, where `:id` is the ID of a constellation, and including a request body, will _replace_ the existing constellation with the information included in the request body.
 
